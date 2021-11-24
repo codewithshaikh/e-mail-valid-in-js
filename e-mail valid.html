@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>E-mail valid</title>
+</head>
+<body>
+
+	<script>
+		
+
+		function myfun(){
+
+			var a = document .myform.Email.value;
+			if (a=="") {
+				document .getElementById("messages").innerHTML="** Please Fill E-mail i'd valid";
+				return false;
+			}
+
+			if (a.indexOf('@')<=0) {
+				document .getElementById("messages").innerHTML="** Invalid E-mail id";
+				return false;
+			}
+
+			if ((a.charAt(a.length-4)!='.')  && (a.charAt(a.length-3)!='.')) {
+				document .getElementById("messages").innerHTML="** Invalid . position at 4";
+				return false;
+			}
+		}
+
+
+
+
+
+	</script>
+
+
+<h1 style="color: green; text-align: center;"> Chek E-mail Validation?</h1>
+
+	<form name="myform" onsubmit="return myfun()">
+
+
+		Email : <input type="text" name="Email" value="">  
+		<span id="messages" style="color: red"> </span>
+		<br><br>
+		<input type="submit" name="submit" value="Submit">
+
+	</form>
+
+</body>
+</html>
